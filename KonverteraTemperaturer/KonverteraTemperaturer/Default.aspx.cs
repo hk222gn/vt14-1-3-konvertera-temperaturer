@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using KonverteraTemperaturer.Model;
 
 namespace KonverteraTemperaturer
 {
@@ -45,7 +46,7 @@ namespace KonverteraTemperaturer
                         TableCell tableCell2 = new TableCell();
 
                         tableCell1.Text = string.Format("{0}", i);
-                        tableCell2.Text = string.Format("{0}", Model.TemperatureConverter.CelsiusToFahrenheit(i));
+                        tableCell2.Text = string.Format("{0}", TemperatureConverter.CelsiusToFahrenheit(i));
 
                         tableRow.Cells.Add(tableCell1);
                         tableRow.Cells.Add(tableCell2);
@@ -72,7 +73,7 @@ namespace KonverteraTemperaturer
                         TableCell tableCell2 = new TableCell();
 
                         tableCell1.Text = string.Format("{0}", i);
-                        tableCell2.Text = string.Format("{0}", Model.TemperatureConverter.FahrenheitToCelsius(i));
+                        tableCell2.Text = string.Format("{0}", TemperatureConverter.FahrenheitToCelsius(i));
 
                         tableRow.Cells.Add(tableCell1);
                         tableRow.Cells.Add(tableCell2);

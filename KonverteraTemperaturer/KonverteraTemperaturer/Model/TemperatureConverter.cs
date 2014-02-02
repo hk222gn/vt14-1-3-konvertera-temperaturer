@@ -9,16 +9,12 @@ namespace KonverteraTemperaturer.Model
     {
         public static double CelsiusToFahrenheit(int degreesC)
         {
-            double fahrenheit = degreesC * 1.8 + 32;
-
-            return fahrenheit;
+            return degreesC * 1.8 + 32;
         }
 
         public static double FahrenheitToCelsius(int degreesF)
         {
-            double celsius = (degreesF - 32) * 5.0 / 9.0;
-
-            return celsius;
+            return (degreesF - 32) * 5.0 / 9.0;
         }
     }
 }
