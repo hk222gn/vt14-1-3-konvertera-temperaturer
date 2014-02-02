@@ -18,26 +18,28 @@ namespace KonverteraTemperaturer
         {
             if (IsValid)
             {
+                //Tar värden från boxarna.
                 int startTemp = int.Parse(StartTempTextBox.Text);
                 int slutTemp = int.Parse(SlutTempTextBox.Text);
                 int tempSteg = int.Parse(TempStegTextBox.Text);
 
                 if (CelsiusRadioButton.Checked)
                 {
+                    //Skapar headers.
                     TableHeaderRow celsiusHeaderRow = new TableHeaderRow();
                     TableHeaderCell celsiusHeaderCell= new TableHeaderCell();
                     TableHeaderCell fahrenheitHeaderCell = new TableHeaderCell();
 
                     celsiusHeaderCell.Text = "&degC";
-                    celsiusHeaderRow.Cells.Add(celsiusHeaderCell);
-
                     fahrenheitHeaderCell.Text = "&degF";
-                    celsiusHeaderRow.Cells.Add(fahrenheitHeaderCell);
 
+                    celsiusHeaderRow.Cells.Add(celsiusHeaderCell);
+                    celsiusHeaderRow.Cells.Add(fahrenheitHeaderCell);
                     TempTable.Rows.Add(celsiusHeaderRow);
 
                     for (int i = startTemp; i <= slutTemp; i += tempSteg)
                     {
+                        //Skapar en rad med två celler, sätter Text till rätt värden.
                         TableRow tableRow = new TableRow();
                         TableCell tableCell1 = new TableCell();
                         TableCell tableCell2 = new TableCell();
@@ -47,9 +49,7 @@ namespace KonverteraTemperaturer
 
                         tableRow.Cells.Add(tableCell1);
                         tableRow.Cells.Add(tableCell2);
-
                         TempTable.Rows.Add(tableRow);
-                        
                     }
                 }
                 else if (FahrenheitRadioButton.Checked)
@@ -59,11 +59,10 @@ namespace KonverteraTemperaturer
                     TableHeaderCell fahrenheitHeaderCell = new TableHeaderCell();
 
                     fahrenheitHeaderCell.Text = "&degF";
-                    fahrenheitHeaderRow.Cells.Add(fahrenheitHeaderCell);
-
                     celsiusHeaderCell.Text = "&degC";
-                    fahrenheitHeaderRow.Cells.Add(celsiusHeaderCell);
 
+                    fahrenheitHeaderRow.Cells.Add(fahrenheitHeaderCell);
+                    fahrenheitHeaderRow.Cells.Add(celsiusHeaderCell);
                     TempTable.Rows.Add(fahrenheitHeaderRow);
 
                     for (int i = startTemp; i <= slutTemp; i += tempSteg)
@@ -77,14 +76,10 @@ namespace KonverteraTemperaturer
 
                         tableRow.Cells.Add(tableCell1);
                         tableRow.Cells.Add(tableCell2);
-
                         TempTable.Rows.Add(tableRow);
-
                     }
                 }
-
                 TempTable.Visible = true;
-
             }
         }
     }
