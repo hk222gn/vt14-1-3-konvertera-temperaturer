@@ -1,0 +1,28 @@
+﻿body {
+}
+#wrapper {
+    width:400px;
+    margin:0 auto;
+    clear:both;
+}
+table {
+    position:absolute;
+    clear:both;
+}
+.down {
+    padding:5px;
+}
+
+th {
+    width:50px;
+    background-color:black;
+    color:white;
+}
+
+td {
+    text-align:center;
+}
+
+tr:nth-child(even) td{
+    background-color:#ffefd8
+}
