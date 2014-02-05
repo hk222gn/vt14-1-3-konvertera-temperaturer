@@ -24,19 +24,18 @@ namespace KonverteraTemperaturer
                 int slutTemp = int.Parse(SlutTempTextBox.Text);
                 int tempSteg = int.Parse(TempStegTextBox.Text);
 
+                TableHeaderRow row = new TableHeaderRow();
+                TableHeaderCell cell1 = new TableHeaderCell();
+                TableHeaderCell cell2 = new TableHeaderCell();
+
                 if (CelsiusRadioButton.Checked)
                 {
-                    //Skapar headers.
-                    TableHeaderRow celsiusHeaderRow = new TableHeaderRow();
-                    TableHeaderCell celsiusHeaderCell= new TableHeaderCell();
-                    TableHeaderCell fahrenheitHeaderCell = new TableHeaderCell();
+                    cell1.Text = "&degC";
+                    cell2.Text = "&degF";
 
-                    celsiusHeaderCell.Text = "&degC";
-                    fahrenheitHeaderCell.Text = "&degF";
-
-                    celsiusHeaderRow.Cells.Add(celsiusHeaderCell);
-                    celsiusHeaderRow.Cells.Add(fahrenheitHeaderCell);
-                    TempTable.Rows.Add(celsiusHeaderRow);
+                    row.Cells.Add(cell1);
+                    row.Cells.Add(cell2);
+                    TempTable.Rows.Add(row);
 
                     for (int i = startTemp; i <= slutTemp; i += tempSteg)
                     {
@@ -55,16 +54,12 @@ namespace KonverteraTemperaturer
                 }
                 else if (FahrenheitRadioButton.Checked)
                 {
-                    TableHeaderRow fahrenheitHeaderRow = new TableHeaderRow();
-                    TableHeaderCell celsiusHeaderCell = new TableHeaderCell();
-                    TableHeaderCell fahrenheitHeaderCell = new TableHeaderCell();
+                    cell1.Text = "&degF";
+                    cell2.Text = "&degC";
 
-                    fahrenheitHeaderCell.Text = "&degF";
-                    celsiusHeaderCell.Text = "&degC";
-
-                    fahrenheitHeaderRow.Cells.Add(fahrenheitHeaderCell);
-                    fahrenheitHeaderRow.Cells.Add(celsiusHeaderCell);
-                    TempTable.Rows.Add(fahrenheitHeaderRow);
+                    row.Cells.Add(cell1);
+                    row.Cells.Add(cell2);
+                    TempTable.Rows.Add(row);
 
                     for (int i = startTemp; i <= slutTemp; i += tempSteg)
                     {
